@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export function Square({ value, onSquareClick }) {
+export function Square({ value, onSquareClick, ...props }) {
   return (
-    <button className="square" onClick={onSquareClick}>
+    <button className="square" onClick={onSquareClick} {...props}>
       {value}
     </button>
   );

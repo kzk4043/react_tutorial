@@ -11,6 +11,9 @@ export default {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  argTypes: {
+    onClick: { action: "clicked" },
+  },
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
@@ -47,6 +50,35 @@ export const O = {
 export const Triangle = {
   args: {
     value: "△",
+    onSquareClick: () => {
+      console.log("Square clicked");
+    },
+  },
+};
+
+// 課題とは関係ないが、parameters機能を使ってみる
+export const CheckParameters = {
+  args: {
+    value: "",
+    onSquareClick: () => {
+      console.log("Square clicked");
+    },
+  },
+  parameters: {
+    backgrounds: {
+      values: [
+        { name: "red", value: "#f00" },
+        { name: "green", value: "#0f0" },
+        { name: "blue", value: "#00f" },
+      ],
+    },
+  },
+};
+
+// 課題とは関係ないが、actions addonを使ってみる
+export const CheckActions = {
+  args: {
+    value: "",
     onSquareClick: () => {
       console.log("Square clicked");
     },

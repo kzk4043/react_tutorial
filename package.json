@@ -14,7 +14,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
+    "chromatic": "npx chromatic --project-token=chpt_bf12feec6b0a15e"
   },
   "browserslist": {
     "production": [
@@ -38,6 +40,8 @@
     "@storybook/react": "^7.6.4",
     "@storybook/react-webpack5": "^7.6.4",
     "@storybook/test": "^7.6.4",
+    "@storybook/test-runner": "^0.16.0",
+    "chromatic": "^10.2.0",
     "eslint": "^8.55.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-storybook": "^0.6.15",

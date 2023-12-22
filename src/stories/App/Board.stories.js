@@ -84,7 +84,7 @@ export const XWin = {
 export const OWin = {
   args: {
     xIsNext: true,
-    squares: ["O", "O", "O", "X", "X", "X", null, null, null],
+    squares: ["O", "O", "O", "X", "X", null, null, null, null],
     onPlay: () => {
       console.log("Square clicked");
     },

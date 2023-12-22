@@ -4,7 +4,6 @@ export function Square({ value, onSquareClick, ...props }) {
   return (
     <button className="square" onClick={onSquareClick} {...props}>
       {value}
-      <span>hoge</span>
     </button>
   );
 }

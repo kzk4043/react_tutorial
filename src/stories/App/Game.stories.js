@@ -1,4 +1,6 @@
 import Game from "../../App";
+import { within, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
@@ -15,4 +17,19 @@ export default {
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 // Gameの初期状態
-export const Initial = {};
+export const Initial = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const squares = canvas.getAllByRole("button");
+    await userEvent.click(squares[0]);
+    await userEvent.click(squares[1]);
+    await userEvent.click(squares[2]);
+    await userEvent.click(squares[3]);
+    await userEvent.click(squares[4]);
+    await userEvent.click(squares[5]);
+    await userEvent.click(squares[6]);
+
+    // 👇 Assert DOM structure
+    await expect(canvas.getByText("Winner: X")).toBeInTheDocument();
+  },
+};

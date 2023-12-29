@@ -16,6 +16,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
+    "test-storybook-u": "test-storybook -u",
+    "test-storybook-w": "test-storybook --watch",
     "chromatic": "npx chromatic --project-token=chpt_bf12feec6b0a15e"
   },
   "browserslist": {

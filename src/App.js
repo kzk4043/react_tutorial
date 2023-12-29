@@ -30,7 +30,7 @@ export function Board({ xIsNext, squares, onPlay }) {
   if (winner) {
     status = "Winner: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = "次のプレイヤー: " + (xIsNext ? "X" : "O");
   }
 
   return (

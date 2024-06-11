@@ -39,5 +39,6 @@ describe("react tutorial", () => {
     cy.get(".board-row").eq(2).find(".square").eq(0).click();
     cy.get(".board-row").eq(2).find(".square").eq(2).click();
     cy.contains("Winner: X");
+    cy.get(".status").should("not.contain", "Draw!");
   });
 });

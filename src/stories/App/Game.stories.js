@@ -33,3 +33,25 @@ export const Initial = {
     await expect(canvas.getByText("Winner: X")).toBeInTheDocument();
   },
 };
+
+// 引き分けの時は「Draw!」と表示される
+// 引き分けなので、勝利メッセージが表示されないことを確認
+export const Draw = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const squares = canvas.getAllByRole("button");
+    await userEvent.click(squares[0]);
+    await userEvent.click(squares[1]);
+    await userEvent.click(squares[2]);
+    await userEvent.click(squares[3]);
+    await userEvent.click(squares[5]);
+    await userEvent.click(squares[4]);
+    await userEvent.click(squares[6]);
+    await userEvent.click(squares[8]);
+    await userEvent.click(squares[7]);
+
+    // 👇 Assert DOM structure
+    await expect(canvas.getByText("Draw!")).toBeInTheDocument();
+    await expect(canvas.queryByText("Winner")).not.toBeInTheDocument();
+  },
+};

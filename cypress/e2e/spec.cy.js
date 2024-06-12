@@ -41,4 +41,41 @@ describe("react tutorial", () => {
     cy.contains("Winner: X");
     cy.get(".status").should("not.contain", "Draw!");
   });
+  // Cypress Studioで記録したテスト
+  it("cypres studio", () => {
+    cy.visit("http://localhost:3000");
+    /* ==== Generated with Cypress Studio ==== */
+    cy.get('.game-board > :nth-child(2) > :nth-child(1)').click();
+    cy.get(':nth-child(3) > :nth-child(1)').click();
+    cy.get(':nth-child(3) > :nth-child(2)').click();
+    cy.get(':nth-child(4) > :nth-child(3)').click();
+    cy.get(':nth-child(4) > :nth-child(2)').click();
+    cy.get(':nth-child(2) > :nth-child(2)').click();
+    cy.get(':nth-child(2) > :nth-child(3)').click();
+    cy.get(':nth-child(3) > :nth-child(3)').click();
+    cy.get('.game-board > :nth-child(4) > :nth-child(1)').click();
+    cy.get('.status').should('have.text', 'Winner: X');
+    /* ==== End Cypress Studio ==== */
+  });
+
+  /* ==== Test Created with Cypress Studio ==== */
+  it('Cypress Studio2', function() {
+    /* ==== Generated with Cypress Studio ==== */
+    cy.visit('localhost:3000');
+    cy.get(':nth-child(3) > :nth-child(1)').click();
+    cy.get(':nth-child(2) > :nth-child(3)').click();
+    cy.get(':nth-child(3) > :nth-child(3)').click();
+    cy.get(':nth-child(3) > :nth-child(2)').click();
+    cy.get(':nth-child(4) > :nth-child(2)').click();
+    cy.get(':nth-child(1) > button').click();
+    cy.get('.game-board > :nth-child(2) > :nth-child(2)').click();
+    cy.get(':nth-child(3) > :nth-child(2)').click();
+    cy.get(':nth-child(4) > :nth-child(2)').click();
+    cy.get('.game-board > :nth-child(3) > :nth-child(1)').click();
+    cy.get('.game-board > :nth-child(2) > :nth-child(1)').click();
+    cy.get(':nth-child(3) > :nth-child(3)').click();
+    cy.get('.status').click();
+    cy.get('.status').should('have.text', 'Winner: O');
+    /* ==== End Cypress Studio ==== */
+  });
 });
